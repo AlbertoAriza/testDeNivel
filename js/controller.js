@@ -1,4 +1,14 @@
 import * as model from './model.js';
+import * as initialScreenView from './views/initialScreenView.js';
+
+
+// *****************************************
+//          VARIABLES UNIVERSALES
+// *****************************************
+let header = document.getElementById('header');
+let main = document.getElementById('main');
+let footer = document.getElementById('footer');
+
 
 // *****************************************
 //          GETTERS PARA LISTENINGS
@@ -217,37 +227,6 @@ function resetStars(){
 }
 
 
-/*  
-   ___ ___  _  _ _____ ___  ___  _      ___  ___   ___  _   _  _ _____ _   _    _      _   ___ 
-  / __/ _ \| \| |_   _| _ \/ _ \| |    |   \| __| | _ \/_\ | \| |_   _/_\ | |  | |    /_\ / __|
- | (_| (_) | .` | | | |   / (_) | |__  | |) | _|  |  _/ _ \| .` | | |/ _ \| |__| |__ / _ \\__ \
-  \___\___/|_|\_| |_| |_|_\\___/|____| |___/|___| |_|/_/ \_\_|\_| |_/_/ \_\____|____/_/ \_\___/
-  
-*/
-
-// FUNCIÓN PARA PASAR DE PANTALLA INFO A PANTALLA GAME
-function infoToGame(){
-    console.log(`pasando a pantalla de juego`);
-    
-    getInfoScreen.style.width = `0`;
-    getInfoScreen.style.height = `0`;
-    getGameScreen.style.width = `100vw`;
-    getGameScreen.style.height = `100lvh`;
-}
-
-function gameToInfo(){
-    console.log(`pasando a pantalla de info`);
-    
-    getInfoScreen.style.width = `100vw`;
-    getInfoScreen.style.height = `100lvh`;
-    getGameScreen.style.width = `0`;
-    getGameScreen.style.height = `0`;
-}
-
-
-
-
-
 /*   
    ___ ___  _  _ _____ ___  ___  _      ___  ___   ___ _   _ _  _ _____ _   _  _   ___ ___   __ _  _ 
   / __/ _ \| \| |_   _| _ \/ _ \| |    |   \| __| | _ \ | | | \| |_   _| | | |/_\ / __|_ _|_/_/| \| |
@@ -387,6 +366,11 @@ const loadStatsC2 = function(){
  \__ \ | |/ _ \|   / | |   | _|| |_| | .` | (__  | |  | | (_) | .` \__ \
  |___/ |_/_/ \_\_|_\ |_|   |_|  \___/|_|\_|\___| |_| |___\___/|_|\_|___/
 */
+let init = function(){
+  initialScreenView.loadInfoScreen(main);
+
+}
+init();
 
 // FUNCIÓN DE INICIO AL APRETAR BOTÓN 
 //getContainerRespuesta01.onclick = answer1Chosen;
@@ -397,8 +381,8 @@ function start(){
         infoToGame();
     });
 }
-newQuestion();
-start();
+//newQuestion();
+//start();
     
 
 
@@ -413,32 +397,6 @@ start();
 
 //FUNCIÓN PARA RESETEAR PANTALLAS Y PONER NUEVAS PREGUNTAS Y RESPUESTAS EN CADA PREGUNTA.
 function newQuestion(){
-    console.log(`*************`);
-    console.log(`Lanzando newQuestion function con los siguientes valores`);
-    console.log(`preguntasHechas: ${preguntasHechas} `);
-    console.log(`listeningsHechos: ${listeningsHechos}`);
-    console.log(`preguntaA1: ${preguntaA1}`);
-    console.log(`preguntaA2: ${preguntaA2}`);
-    console.log(`preguntaB1: ${preguntaB1}`);
-    console.log(`preguntaB2: ${preguntaB2}`);
-    console.log(`preguntaC1: ${preguntaC1}`);
-    console.log(`preguntaC2: ${preguntaC2}`);
-
-    console.log(`rightQuestionsA1: ${rightQuestionsA1}`);
-    console.log(`rightQuestionsA2: ${rightQuestionsA2}`);
-    console.log(`rightQuestionsB1: ${rightQuestionsB1}`);
-    console.log(`rightQuestionsB2: ${rightQuestionsB2}`);
-    console.log(`rightQuestionsC1: ${rightQuestionsC1}`);
-    console.log(`rightQuestionsC2: ${rightQuestionsC2}`);
-    
-    console.log(`counterListeningsA2: ${counterListeningsA2}`);
-    console.log(`counterListeningsB1: ${counterListeningsB1}`);
-    console.log(`counterListeningsB2: ${counterListeningsB2}`);
-
-    console.log(`rightListeningsA2: ${rightListeningsA2}`);
-    console.log(`rightListeningsB1: ${rightListeningsB1}`);
-    console.log(`rightListeningsB2: ${rightListeningsB2}`);
-    console.log(`*************`);
     
     /***************************
      *         NIVEL A1        *

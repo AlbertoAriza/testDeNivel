@@ -35,9 +35,6 @@ export const state = {
     questionsB2: 0,
     questionsC1: 0,
     questionsC2: 0,
-
-    
-    
 }
 
 let getEstrella; // variable para controlar la estrella que hay que transformar en cada pregunta de cada ronda.
