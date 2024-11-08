@@ -1,51 +1,48 @@
-function gameToQuestions(){
-    let datos = `<div id="questionContainer">
-    <p id="question">Texto pregunta la</p>
-  </div>
-  <div class="answerContainer" id="answerContainer01">
-    <p class="answer" id="answer01">Respuesta 1</p>
-  </div>
-  <div class="answerContainer" id="answerContainer02">
-    <p class="answer" id="answer02">Respuesta 2</p>
-  </div>
-  <div class="answerContainer" id="answerContainer03">
-    <p class="answer" id="answer03">Respuesta 3</p>
-  </div>
-  <div class="answerContainer" id="answerContainer04">
-    <p class="answer" id="answer04">Respuesta 4</p>
-  </div>`;
-    getMain.innerHTML = datos;
-  
-    // REACTIVAMOS LAS VARIABLES QUE ATRAPAN LOS DISTINTOS ELEMENTOS DE LAS PREGUNTAS Y OPCIONES DE RESPUESTA
-    getContainerPregunta = document.getElementById('questionContainer');
-    getTextoPregunta = document.getElementById('question');
-    getContainerRespuesta01 = document.getElementById(`answerContainer01`);
-    getTextoRespuesta01 = document.getElementById(`answer01`);
-    getContainerRespuesta02 = document.getElementById(`answerContainer02`);
-    getTextoRespuesta02 = document.getElementById(`answer02`);
-    getContainerRespuesta03 = document.getElementById(`answerContainer03`);
-    getTextoRespuesta03 = document.getElementById(`answer03`);
-    getContainerRespuesta04 = document.getElementById(`answerContainer04`);
-    getTextoRespuesta04 = document.getElementById(`answer04`);
-  }
-  
-  function resetQuestionStyles(){
-    getContainerRespuesta01.className ="answerContainer";
-    getContainerRespuesta02.className ="answerContainer";
-    getContainerRespuesta03.className ="answerContainer";
-    getContainerRespuesta04.className ="answerContainer";
+
+
+class GameToQuestions{
+
+  _parentElement = document.querySelector('main');
+  _state;
+  _questionArr;
+    
+  render(state, questionArr){
+    
+    this._state = state;
+    this._questionArr = questionArr;
+    const html = this._generateHTML();
+    this._parentElement.innerHTML = '';
+    this._parentElement.insertAdjacentHTML('afterbegin', html);
   }
 
-//HACEMOS GET DE LOS CAMPOS PREGUNTA
-let getContainerPregunta = document.getElementById('questionContainer');
-let getTextoPregunta = document.getElementById('question');
+  _generateHTML(){
+        return `
+          <article>
+            <div id="questionContainer">
+              <p id="question">${this._questionArr[0]}</p>
+            </div>
+            <div id="possibleAnswers">
+              <button data-option="5" class="answerContainer" id="answerContainer01">
+                <p class="answer" id="answer01">${this._questionArr[1]}</p>
+              </button>
+              <button data-option="6" class="answerContainer" id="answerContainer02">
+                <p class="answer" id="answer02">${this._questionArr[2]}</p>
+              </button>
+              <button data-option="7" class="answerContainer" id="answerContainer03">
+                <p class="answer" id="answer03">${this._questionArr[3]}</p>
+              </button>
+              <button data-option="8" class="answerContainer" id="answerContainer04">
+                <p class="answer" id="answer04">${this._questionArr[4]}</p>
+              </button>
+            </div>
+          </article>
+        `
+  }
 
-//HACEMOS GET DE LOS CAMPOS DE RESPUESTA
-let getContainerRespuesta01 = document.getElementById(`answerContainer01`);
-let getTextoRespuesta01 = document.getElementById(`answer01`);
-let getContainerRespuesta02 = document.getElementById(`answerContainer02`);
-let getTextoRespuesta02 = document.getElementById(`answer02`);
-let getContainerRespuesta03 = document.getElementById(`answerContainer03`);
-let getTextoRespuesta03 = document.getElementById(`answer03`);
-let getContainerRespuesta04 = document.getElementById(`answerContainer04`);
-let getTextoRespuesta04 = document.getElementById(`answer04`);
+  addHandler(handlerFunction){
+    // ACTIVAR LOS BOTONES DE RESPUESTA
+    document.querySelector('#possibleAnswers').addEventListener('click', handlerFunction)
+  }
+}
+
+export default new GameToQuestions();

@@ -1,35 +1,28 @@
-function footerToListening(){
-    let datos = `<div class="imgEstrella"><img class="imgEstrellaIn" id="star-0" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-1" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-2" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-3" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-4" src="imgs/estrella-bn.png" alt=""></div>`;
-  
-    getFooter.innerHTML = datos;
-  
-  }
-  
-  function footerToListeningC1(){
-    let datos = `<div class="imgEstrella"><img class="imgEstrellaIn" id="star-0" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-1" src="imgs/estrella-bn.png" alt=""></div>`;
-  
-    getFooter.innerHTML = datos;
-  
-  }
-  
-  function footerToQuestions(){
-    let datos = `<div class="imgEstrella"><img class="imgEstrellaIn" id="star-0" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-1" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-2" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-3" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-4" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-5" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-6" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-7" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-8" src="imgs/estrella-bn.png" alt=""></div>
-    <div class="imgEstrella"><img class="imgEstrellaIn" id="star-9" src="imgs/estrella-bn.png" alt=""></div>`;
-  
-    getFooter.innerHTML = datos;
+
+class FooterStarsView{
+
+  _parentElement = document.querySelector('footer');
+  _state;
+  _starsAmount = 0;
+
+  render(state){
+    this._state = state;
+    this._parentElement.innerHTML = '';
+    if(state.counters.mainCounter === 20 || state.counters.mainCounter === 35 || state.counters.mainCounter === 50 || state.counters.mainCounter === 65 || state.counters.mainCounter === 80){
+      this._starsAmount = 5;
+    }else{
+      this._starsAmount = 10;
+    }
+
+    for(let i = 0; i< this._starsAmount; i++){
+      let html = `<div class="imgEstrella"><img class="imgEstrellaIn" id="star-${i}" src="imgs/estrella-bn.png" alt=""></div>`
+      this._parentElement.insertAdjacentHTML('beforeend', html);
+    }
   }
 
-  let getFooter = document.getElementById(`footer`);
+  addHandler(handlerFunction){
+      document.querySelector('#btn_inicio').addEventListener('click', handlerFunction);
+  }
+}
+
+export default new FooterStarsView();

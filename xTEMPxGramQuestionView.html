@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMP VIEW FOR gramQuestionView</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/initialScreenView.css">
+    <link rel="stylesheet" href="styles/gramQuestionView.css">
+    <link rel="stylesheet" href="styles/levelsView.css">
+    <link rel="stylesheet" href="styles/footerStarsView.css">
+    <link rel="stylesheet" href="styles/statsScreenView.css">
+    <link rel="stylesheet" href="styles/finalScreenView.css">
+    <link rel="stylesheet" href="styles/listeningViews.css">
+    <!--  → JAVASCRIPT LINK ←  -->
+    <script src="js/views/finalScreenView.js" defer></script>
+
+</head>
+<body>
+    <header id="header">
+    </header>
+        
+    <main id="main">
+      <section id="listeningContainer">
+        <h4>Listen to the recording and answer these two questions. You can listen to the recording twice.</h4>
+        <div id="audioBox">
+          <audio id="audio" controls>
+            <source id="audioSrc" src="${this._listenings[this._state.counters.listeningsLevel][this._state.counters.listeningInLevelNumber][1]}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        
+        <!-- Question 1 -->
+        <div class="questionContainerC1" id="questionContainer1">
+          <p id="question1">Question 1</p>
+        </div>
+        
+        <div class="answersC1Container" id="answersC1Container1">
+          <button data-option="5" class="answerContainer" id="answerContainer01">
+            <p class="answer" id="answer01">Answer 1</p>
+          </button>
+          <button data-option="6" class="answerContainer" id="answerContainer02">
+            <p class="answer" id="answer02">Answer 2</p>
+          </button>
+          <button data-option="7" class="answerContainer" id="answerContainer03">
+            <p class="answer" id="answer03">Answer 3</p>
+          </button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="questionContainerC1" id="questionContainer2">
+          <p id="question2">Question 2</p>
+        </div>
+        
+        <div class="answersC1Container" id="answersC1Container2">
+          <button data-option="8" class="answerContainer" id="answerContainer04">
+            <p class="answer" id="answer04">Answer 1</p>
+          </button>
+          <button data-option="9" class="answerContainer" id="answerContainer05">
+            <p class="answer" id="answer05">answer 2</p>
+          </button>
+          <button data-option="10" class="answerContainer" id="answerContainer06">
+            <p class="answer" id="answer06">answer 3</p>
+          </button>
+        </div>
+
+        <!-- Submit Button -->
+         <div class="button-container"> 
+           <button id="submitAnswers" class="btn submitButton">Submit Answers</button>
+          </div>
+
+      </section>
+    </main>
+        
+    <footer id="footer">
+    </footer>
+</body>
+</html>

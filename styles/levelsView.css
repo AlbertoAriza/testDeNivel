@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+
+    flex-wrap: wrap;
+
+    & div.imgLevel{
+
+        & img{
+            width: 80px;
+        }
+    }
+}

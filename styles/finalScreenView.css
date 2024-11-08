@@ -1,0 +1,415 @@
+section#finalViewContainer{
+    width: 500px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    outline: 1px solid gray;
+    outline-offset: 2px;
+    margin-block: 10px;
+    margin-inline: auto;
+
+    & #statsResultsH3{
+        color: var(--mainColor);
+        text-align: center;
+    }
+
+    & p#parrafo_resultado{
+        text-align: center;
+        margin-block: 10px;
+
+        & span{
+            color: rgb(5, 0, 77);
+            font-weight: 700;
+        }
+    }
+
+    & article#finalStatsContainer{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+
+        & .finalViewLevel{
+            border: 1px solid blue;
+            height: 100px;
+            width: 100px;
+
+
+            & img{
+                height: 100px;
+            }
+        }
+    }
+
+    & .btn_container{
+        width: 100%;
+        text-align: center;
+    
+        & #btn_continue{
+            margin: 10px;
+        }
+    }
+}
+
+/* → FINALPROGRESSBAR1  */
+.finalProgressbar1:not([role="finalProgressbar1"]){
+    color: red;
+}
+
+[role="finalProgressbar1"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR2  */
+.finalProgressbar2:not([role="finalProgressbar2"]){
+    color: red;
+}
+
+[role="finalProgressbar2"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR3  */
+.finalProgressbar3:not([role="finalProgressbar3"]){
+    color: red;
+}
+
+[role="finalProgressbar3"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR4  */
+.finalProgressbar4:not([role="finalProgressbar4"]){
+    color: red;
+}
+
+[role="finalProgressbar4"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR5  */
+.finalProgressbar5:not([role="finalProgressbar5"]){
+    color: red;
+}
+
+[role="finalProgressbar5"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR6  */
+.finalProgressbar6:not([role="finalProgressbar6"]){
+    color: red;
+}
+
+[role="finalProgressbar6"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR7  */
+.finalProgressbar7:not([role="finalProgressbar7"]){
+    color: red;
+}
+
+[role="finalProgressbar7"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR8  */
+.finalProgressbar8:not([role="finalProgressbar8"]){
+    color: red;
+}
+
+[role="finalProgressbar8"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR9  */
+.finalProgressbar9:not([role="finalProgressbar9"]){
+    color: red;
+}
+
+[role="finalProgressbar9"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR10  */
+.finalProgressbar10:not([role="finalProgressbar10"]){
+    color: red;
+}
+
+[role="finalProgressbar10"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+/* → FINALPROGRESSBAR11  */
+.finalProgressbar11:not([role="finalProgressbar11"]){
+    color: red;
+}
+
+[role="finalProgressbar11"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}

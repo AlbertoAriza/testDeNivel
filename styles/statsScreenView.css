@@ -1,0 +1,113 @@
+/************************
+CSS DE PANTALLA DE STATS
+*************************/
+
+#statsContainer{
+    width: 500px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    outline: 1px solid gray;
+    outline-offset: 2px;
+    margin-block: 10px;
+    margin-inline: auto;
+
+    & #statsResultsH3{
+        color: var(--mainColor);
+        text-align: center;
+    }
+
+    & p#parrafo_resultado{
+        text-align: center;
+        margin-block: 10px;
+
+        & span{
+            color: rgb(5, 0, 77);
+            font-weight: 700;
+        }
+    }
+
+    & .btn_container{
+        width: 100%;
+        text-align: center;
+    
+        & #btn_continue{
+            margin: 10px;
+        }
+    }
+}
+
+
+
+
+
+.progressbar1:not([role="progressbar1"]){
+    color: red;
+}
+
+[role="progressbar1"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
+
+.statsTwinTitleContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+#progressbarContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+[role="progressbar2"]{
+
+    font-size: 2rem;
+    width: var(--statSize);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(
+        var(--statsMainColor2) var(--progress2, 0),
+        var(--statsSecondaryColor) 0
+    );
+    margin: 2rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    &::after{
+        content: attr(aria-valuenow2) "%";
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--statWidth));
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+    }
+
+    p{
+        display: none;
+    }
+}
