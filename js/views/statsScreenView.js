@@ -30,7 +30,6 @@ class StatsScreenView{
             getProgressbar1.setAttribute("role", "progressbar1");
             getProgressbar1.setAttribute("aria-valuenow", 0);
             getProgressbar1.setAttribute("aria-live", "polite")
-                
             getProgressbar1.setAttribute("aria-valuenow", progress1);
             getProgressbar1.style.setProperty(`--progress1`, progress1 + "%");
                 
@@ -38,7 +37,6 @@ class StatsScreenView{
             getProgressbar2.setAttribute("role", "progressbar2");
             getProgressbar2.setAttribute("aria-valuenow2", 0);
             getProgressbar2.setAttribute("aria-live", "polite")
-                
             getProgressbar2.setAttribute("aria-valuenow2", progress2);
             getProgressbar2.style.setProperty(`--progress2`, progress2 + "%");
         }

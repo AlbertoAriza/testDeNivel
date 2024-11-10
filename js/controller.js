@@ -28,7 +28,7 @@ const loadEndScreen = function(){
  */
 const showStatsFunc = function(){
   statsScreenView.render(model.state);
-  if(model.state.counters.questionInLevelNumber === 10 && model.state.counters.rightQuestions[model.state.counters.questionsLevel] >= 8 && model.state.counters.mainCounter < 78){ // lo que se hace si se aprueba un nivel
+  if(model.state.counters.questionInLevelNumber === 10 && model.state.counters.rightQuestions[model.state.counters.questionsLevel] >= 8 && model.state.counters.mainCounter < 77){ // lo que se hace si se aprueba un nivel
     statsScreenView.addHandler(eventFunction.statsHandlerFunction);
     model.state.counters.levelsPass[model.state.counters.questionsLevel] = true;
   }else{
@@ -138,22 +138,22 @@ const brainFunction = function(){
         - Entre 65 y 68 los listenings
         - Valor == 69 los stats
   */
-  }else if(model.state.counters.mainCounter < 66){ // → Render preguntas C1
+  }else if(model.state.counters.mainCounter < 65){ // → Render preguntas C1
     loadGramQuestionView();
 
-  }else if(model.state.counters.mainCounter < 68){ // → Render 4 listenings C1
-    if(model.state.counters.mainCounter === 67)model.state.counters.showStats = true;
+  }else if(model.state.counters.mainCounter < 67){ // → Render 2 listenings C1
+    if(model.state.counters.mainCounter === 66)model.state.counters.showStats = true;
     loadListeningView();
 
-  }else if(model.state.counters.mainCounter === 68 && model.state.counters.showStats){ // Render STATS C1
+  }else if(model.state.counters.mainCounter === 67 && model.state.counters.showStats){ // Render STATS C1
     showStatsFunc();
 
   /*
       →→ C2 RENDERS ←←
   */
-  }else if(model.state.counters.mainCounter < 78){ // → Mostramos las 10 preguntas de C2
+  }else if(model.state.counters.mainCounter < 77){ // → Mostramos las 10 preguntas de C2
     // render preguntas de C2
-    if(model.state.counters.mainCounter === 77)model.state.counters.showStats = true;
+    if(model.state.counters.mainCounter === 76)model.state.counters.showStats = true;
     loadGramQuestionView();
 
   }else{

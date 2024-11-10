@@ -70,7 +70,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow1) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -94,7 +94,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress2, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -103,7 +103,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow2) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -127,7 +127,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress3, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -136,7 +136,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow3) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -160,7 +160,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress4, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -169,7 +169,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow4) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -193,7 +193,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress5, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -202,7 +202,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow5) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -226,7 +226,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress6, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -235,7 +235,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow6) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -259,7 +259,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress7, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -268,7 +268,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow7) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -292,7 +292,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress8, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -301,7 +301,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow8) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -325,7 +325,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress9, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -334,7 +334,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow9) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -358,7 +358,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress10, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -367,7 +367,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow10) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));
@@ -391,7 +391,7 @@ section#finalViewContainer{
     width: var(--statSize);
     aspect-ratio: 1 / 1;
     background: conic-gradient(
-        var(--statsMainColor1) var(--progress1, 0),
+        var(--statsMainColor1) var(--progress11, 0),
         var(--statsSecondaryColor) 0
     );
     margin: 2rem auto;
@@ -400,7 +400,7 @@ section#finalViewContainer{
     place-items: center;
 
     &::after{
-        content: attr(aria-valuenow) "%";
+        content: attr(aria-valuenow11) "%";
         background-color: white;
         border-radius: inherit;
         width: calc(100% - var(--statWidth));

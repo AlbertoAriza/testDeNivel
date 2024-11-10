@@ -5,29 +5,29 @@ class FinalScreenView{
 
     render(state){
         this._state = state;
-        document.querySelector('#header').innerHTML = '';
-        document.querySelector('#footer').innerHTML = '';
-        this._parentElement.innerHTML = '';
-        const html = this._generateHTML();
-        this._parentElement.innerHTML = html;
+        document.querySelector('#header').innerHTML = ''; // → Limpia el header
+        document.querySelector('#footer').innerHTML = ''; // → Limpia el footer
+        this._parentElement.innerHTML = ''; // → Limpia el main
+        const html = this._generateHTML(); // → Genera el HTML para la pantalla final con todos los STATS
+        this._parentElement.innerHTML = html; // → Inserta el HTML generado en el main
 
         // → PARTE LÓGICA DE LOS CONTADORES Y PORCENTAJES
         // finalProgressbar1 → Grammar A1 (0)
         let finalProgressbar1 = this._state.counters.counterQuestions[0] > 0 ? 100 * this._state.counters.rightQuestions[0] / this._state.counters.counterQuestions[0] : 0;
         const getfinalProgressbar1 = document.querySelector(`.finalProgressbar1`);
         getfinalProgressbar1.setAttribute("role", "finalProgressbar1");
-        getfinalProgressbar1.setAttribute("aria-valuenow", 0);
+        getfinalProgressbar1.setAttribute("aria-valuenow1", 0);
         getfinalProgressbar1.setAttribute("aria-live", "polite")
-        getfinalProgressbar1.setAttribute("aria-valuenow", finalProgressbar1);
+        getfinalProgressbar1.setAttribute("aria-valuenow1", finalProgressbar1);
         getfinalProgressbar1.style.setProperty(`--progress1`, finalProgressbar1 + "%");
         
         // finalProgressbar2 → Grammar A2 (1)
         let finalProgressbar2 = this._state.counters.counterQuestions[1] > 0 ? 100 * this._state.counters.rightQuestions[1] / this._state.counters.counterQuestions[1] : 0;
         const getFinalProgressbar2 = document.querySelector(`.finalProgressbar2`);
         getFinalProgressbar2.setAttribute("role", "finalProgressbar2");
-        getFinalProgressbar2.setAttribute("aria-valuenow", 0);
+        getFinalProgressbar2.setAttribute("aria-valuenow2", 0);
         getFinalProgressbar2.setAttribute("aria-live", "polite")
-        getFinalProgressbar2.setAttribute("aria-valuenow", finalProgressbar2);
+        getFinalProgressbar2.setAttribute("aria-valuenow2", finalProgressbar2);
         getFinalProgressbar2.style.setProperty(`--progress2`, finalProgressbar2 + "%");
 
         // finalProgressbar3 → Listenings A2 (1)
@@ -35,9 +35,9 @@ class FinalScreenView{
         const getfinalProgressbar3 = document.querySelector(`.finalProgressbar3`);
         if (getfinalProgressbar3) {
             getfinalProgressbar3.setAttribute("role", "finalProgressbar3");
-            getfinalProgressbar3.setAttribute("aria-valuenow", 0);
+            getfinalProgressbar3.setAttribute("aria-valuenow3", 0);
             getfinalProgressbar3.setAttribute("aria-live", "polite");
-            getfinalProgressbar3.setAttribute("aria-valuenow", finalProgressbar3);
+            getfinalProgressbar3.setAttribute("aria-valuenow3", finalProgressbar3);
             getfinalProgressbar3.style.setProperty(`--progress3`, finalProgressbar3 + "%");
         }
 
@@ -46,9 +46,9 @@ class FinalScreenView{
         const getFinalProgressbar4 = document.querySelector(`.finalProgressbar4`);
         if (getFinalProgressbar4) {
             getFinalProgressbar4.setAttribute("role", "finalProgressbar4");
-            getFinalProgressbar4.setAttribute("aria-valuenow", 0);
+            getFinalProgressbar4.setAttribute("aria-valuenow4", 0);
             getFinalProgressbar4.setAttribute("aria-live", "polite");
-            getFinalProgressbar4.setAttribute("aria-valuenow", finalProgressbar4);
+            getFinalProgressbar4.setAttribute("aria-valuenow4", finalProgressbar4);
             getFinalProgressbar4.style.setProperty(`--progress4`, finalProgressbar4 + "%");
         }
 
@@ -57,9 +57,9 @@ class FinalScreenView{
         const getfinalProgressbar5 = document.querySelector(`.finalProgressbar5`);
         if (getfinalProgressbar5) {
             getfinalProgressbar5.setAttribute("role", "finalProgressbar5");
-            getfinalProgressbar5.setAttribute("aria-valuenow", 0);
+            getfinalProgressbar5.setAttribute("aria-valuenow5", 0);
             getfinalProgressbar5.setAttribute("aria-live", "polite");
-            getfinalProgressbar5.setAttribute("aria-valuenow", finalProgressbar5);
+            getfinalProgressbar5.setAttribute("aria-valuenow5", finalProgressbar5);
             getfinalProgressbar5.style.setProperty(`--progress5`, finalProgressbar5 + "%");
         }
 
@@ -68,9 +68,9 @@ class FinalScreenView{
         const getFinalProgressbar6 = document.querySelector(`.finalProgressbar6`);
         if (getFinalProgressbar6) {
             getFinalProgressbar6.setAttribute("role", "finalProgressbar6");
-            getFinalProgressbar6.setAttribute("aria-valuenow", 0);
+            getFinalProgressbar6.setAttribute("aria-valuenow6", 0);
             getFinalProgressbar6.setAttribute("aria-live", "polite");
-            getFinalProgressbar6.setAttribute("aria-valuenow", finalProgressbar6);
+            getFinalProgressbar6.setAttribute("aria-valuenow6", finalProgressbar6);
             getFinalProgressbar6.style.setProperty(`--progress6`, finalProgressbar6 + "%");
         }
 
@@ -79,9 +79,9 @@ class FinalScreenView{
         const getfinalProgressbar7 = document.querySelector(`.finalProgressbar7`);
         if (getfinalProgressbar7) {
             getfinalProgressbar7.setAttribute("role", "finalProgressbar7");
-            getfinalProgressbar7.setAttribute("aria-valuenow", 0);
+            getfinalProgressbar7.setAttribute("aria-valuenow7", 0);
             getfinalProgressbar7.setAttribute("aria-live", "polite");
-            getfinalProgressbar7.setAttribute("aria-valuenow", finalProgressbar7);
+            getfinalProgressbar7.setAttribute("aria-valuenow7", finalProgressbar7);
             getfinalProgressbar7.style.setProperty(`--progress7`, finalProgressbar7 + "%");
         }
 
@@ -90,9 +90,9 @@ class FinalScreenView{
         const getFinalProgressbar8 = document.querySelector(`.finalProgressbar8`);
         if (getFinalProgressbar8) {
             getFinalProgressbar8.setAttribute("role", "finalProgressbar8");
-            getFinalProgressbar8.setAttribute("aria-valuenow", 0);
+            getFinalProgressbar8.setAttribute("aria-valuenow8", 0);
             getFinalProgressbar8.setAttribute("aria-live", "polite");
-            getFinalProgressbar8.setAttribute("aria-valuenow", finalProgressbar8);
+            getFinalProgressbar8.setAttribute("aria-valuenow8", finalProgressbar8);
             getFinalProgressbar8.style.setProperty(`--progress8`, finalProgressbar8 + "%");
         }
 
@@ -102,9 +102,9 @@ class FinalScreenView{
         const getfinalProgressbar9 = document.querySelector(`.finalProgressbar9`);
         if (getfinalProgressbar9) {
             getfinalProgressbar9.setAttribute("role", "finalProgressbar9");
-            getfinalProgressbar9.setAttribute("aria-valuenow", 0);
+            getfinalProgressbar9.setAttribute("aria-valuenow9", 0);
             getfinalProgressbar9.setAttribute("aria-live", "polite");
-            getfinalProgressbar9.setAttribute("aria-valuenow", finalProgressbar9);
+            getfinalProgressbar9.setAttribute("aria-valuenow9", finalProgressbar9);
             getfinalProgressbar9.style.setProperty(`--progress9`, finalProgressbar9 + "%");
         }
 
@@ -113,14 +113,14 @@ class FinalScreenView{
         const getFinalProgressbar10 = document.querySelector(`.finalProgressbar10`);
         if (getFinalProgressbar10) {
             getFinalProgressbar10.setAttribute("role", "finalProgressbar10");
-            getFinalProgressbar10.setAttribute("aria-valuenow", 0);
+            getFinalProgressbar10.setAttribute("aria-valuenow10", 0);
             getFinalProgressbar10.setAttribute("aria-live", "polite");
-            getFinalProgressbar10.setAttribute("aria-valuenow", finalProgressbar10);
+            getFinalProgressbar10.setAttribute("aria-valuenow10", finalProgressbar10);
             getFinalProgressbar10.style.setProperty(`--progress10`, finalProgressbar10 + "%");
         }
 
         // finalProgress11 → Listenings C2 (5)
-        let finalProgressbar11 = this._state.counters.counterListenings[5] > 0 ? 100 * this._state.counters.rightListenings[5] / this._state.counters.counterListenings[5] : 0;
+        /*let finalProgressbar11 = this._state.counters.counterListenings[5] > 0 ? 100 * this._state.counters.rightListenings[5] / this._state.counters.counterListenings[5] : 0;
         const getfinalProgressbar11 = document.querySelector(`.finalProgressbar11`);
         if (getfinalProgressbar11) {
             getfinalProgressbar11.setAttribute("role", "finalProgressbar11");
@@ -128,7 +128,7 @@ class FinalScreenView{
             getfinalProgressbar11.setAttribute("aria-live", "polite");
             getfinalProgressbar11.setAttribute("aria-valuenow", finalProgressbar11);
             getfinalProgressbar11.style.setProperty(`--progress11`, finalProgressbar11 + "%");
-        }
+        }*/
 
     }
 
