@@ -2,13 +2,13 @@ export const state = {
     counters: {
 
         // CONTADORES GENERALES.
-        mainCounter: 65, // counter general de preguntas tanto de gramática como de listenings
+        mainCounter: 56, // counter general de preguntas tanto de gramática como de listenings
         preguntasHechas: 0, // counter general de preguntas de gramática hechas
         listeningsHechos: 0, // counter general de listenings hechos
         
-        questionsLevel: 0, // controla el nivel en el que nos encontramos actualmente
+        questionsLevel: 4, // controla el nivel en el que nos encontramos actualmente
         questionInLevelNumber: 0, // controla el número de pregunta de gramática en el que estamos dentro de cada nivel.
-        listeningsLevel: 4,
+        listeningsLevel: 4, // controla el nivel de listening en el que nos encontrábamos.
         listeningInLevelNumber: 0, // controla el número de listening en el que estamos dentro de cada nivel
         
         showStats: true,

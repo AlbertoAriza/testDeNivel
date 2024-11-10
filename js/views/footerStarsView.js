@@ -8,8 +8,10 @@ class FooterStarsView{
   render(state){
     this._state = state;
     this._parentElement.innerHTML = '';
-    if(state.counters.mainCounter === 20 || state.counters.mainCounter === 35 || state.counters.mainCounter === 50 || state.counters.mainCounter === 65 || state.counters.mainCounter === 80){
+    if(state.counters.mainCounter === 20 || state.counters.mainCounter === 35 || state.counters.mainCounter === 50){
       this._starsAmount = 5;
+    }else if(state.counters.mainCounter === 66){
+      this._starsAmount = 4;
     }else{
       this._starsAmount = 10;
     }

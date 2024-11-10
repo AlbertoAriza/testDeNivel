@@ -203,8 +203,8 @@ class FinalScreenView{
                     <div class="finalProgressbar10">
                         <p>Only works with JS enabled</p>
                     </div>
-                    <div class="finalProgressbar11">
-                        <p>Only works with JS enabled</p>
+                    <div class="">
+                        <p>Not tested</p>
                     </div>
                 </article>
                 <div class="btn_container">
@@ -214,10 +214,8 @@ class FinalScreenView{
         `
     }
 
-    addHandler(){
-        document.querySelector('#btn_continue').addEventListener('click', function(){
-            window.close();
-        });
+    addHandler(handlerFunction){
+        document.querySelector('#btn_continue').addEventListener('click', handlerFunction);
     }
 }
 

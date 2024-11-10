@@ -132,13 +132,10 @@ class ListeningView{
 
   addHandler(handlerFunction, handlerFunction2, handlerFunction3){
     if(this._state.counters.listeningsLevel < 3){
-      console.log("adding the handler function al listening y sus botones");
       document.querySelector('#answerFotoContainer').addEventListener('click', handlerFunction);
     }else if(this._state.counters.listeningsLevel === 3){
-      console.log("adding the handler function al listening y sus botones nivel B2");
       document.querySelector('#answersB2Container').addEventListener('click', handlerFunction);
     }else if(this._state.counters.listeningsLevel === 4){
-      console.log("adding the handler function al listening y sus botones nivel C1");
       document.querySelector('#answersC1Container1').addEventListener('click', handlerFunction);
       document.querySelector('#answersC1Container2').addEventListener('click', handlerFunction2);
       document.querySelector('#submitAnswers').addEventListener('click', handlerFunction3);

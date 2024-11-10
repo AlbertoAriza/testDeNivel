@@ -163,74 +163,97 @@ const listeningState = {
 /**/  // LLAMAMOS DE NUEVO LA FUNCIÓN BRAIN
 /**/   callBrain();
 /**/}
-/******************************************* →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE B2  ←←*******************************************/
+/*************************************** →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE B2  ←←  ***************************************/
+
+
 
 /**
- * Esta función se manda como parámetro al <<RENDER de LISTENING de C1>> para darle funcionalidad a la hora de escoger opción de respuesta
+ * Esta función se manda como parámetro al <<RENDER de LISTENING de C1 PRIMERA PREGUNTA>> para darle funcionalidad a la hora de escoger opción de respuesta
  * 
  */
-export const listeningHandlerFuncC1 = function(e){
-    const button = e.target.closest('.answerContainer');
-    if (button) {
-        document.querySelector('#answersC1Container1').querySelectorAll('.answerContainer').forEach(btn => {
-            btn.classList.remove('selected');
-        });
-        button.classList.add('selected');
-        listeningState.selectedAnswer1 = button.dataset.option;
-    }
-}
+/**/export const listeningHandlerFuncC1 = function(e){
+/**/    const button = e.target.closest('.answerContainer');
+/**/    if (button) {
+/**/        document.querySelector('#answersC1Container1').querySelectorAll('.answerContainer').forEach(btn => {
+/**/            btn.classList.remove('selected');
+/**/        });
+/**/        button.classList.add('selected');
+/**/        listeningState.selectedAnswer1 = button.dataset.option;
+/**/    }
+/**/}
+/************************************** →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE C1 PRIMERA PREGUNTA  ←←  ****************************************/
 
-export const listeningHandlerFuncC1_2 = function(e){
-    const button = e.target.closest('.answerContainer');
-    if (button) {
-        document.querySelector('#answersC1Container2').querySelectorAll('.answerContainer').forEach(btn => {
-            btn.classList.remove('selected');
-        });
-        button.classList.add('selected');
-        listeningState.selectedAnswer2 = button.dataset.option;
-    }
-}
 
-export const listeningHandlerFuncC1_3 = function(){
-    // eliminamos los EVENT HANDLERS de los botones
-    document.querySelector('#answersC1Container1').removeEventListener('click', listeningHandlerFuncC1);
-    document.querySelector('#answersC1Container2').removeEventListener('click', listeningHandlerFuncC1_2);
-    document.querySelector('#submitAnswers').removeEventListener('click', listeningHandlerFuncC1_3);
-    // Submit handler
-    if (listeningState.selectedAnswer1 && listeningState.selectedAnswer2) {
-        // CHEQUEANDO LA RESPUESTA A LA PRIMERA PREGUNTA
-        if(model.listenings[model.state.counters.listeningsLevel][model.state.counters.listeningInLevelNumber][0][listeningState.selectedAnswer1]){
-            // → COSAS QUE PASAN SI LA PRIMERA PREGUNTA ES CORRECTA
-            document.querySelector(`#star-${model.state.counters.listeningInLevelNumber++}`).src = 'imgs/estrella.png'; // cambiamos la imagen de la estrella a estrella acertada
-            //cambiamos estilos al botón de acertado
-            let chosen1 = document.querySelector('.selected');
-            chosen1.classList.remove('answerContainer');
-            chosen1.classList.add('correctAnswer');
+/**
+ * Esta función se manda como parámetro al <<RENDER de LISTENING de C1 - SEGUNDA PREGUNTA>> para darle funcionalidad a la hora de escoger opción de respuesta
+ * 
+ */
+/**/export const listeningHandlerFuncC1_2 = function(e){
+/**/    const button = e.target.closest('.answerContainer');
+/**/    if (button) {
+/**/        document.querySelector('#answersC1Container2').querySelectorAll('.answerContainer').forEach(btn => {
+/**/            btn.classList.remove('selected');
+/**/        });
+/**/        button.classList.add('selected');
+/**/        listeningState.selectedAnswer2 = button.dataset.option;
+/**/    }
+/**/}
+/**************************************  →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE C1 SEGUNDA PREGUNTA  ←←  ****************************************/
 
-        }else{
-            // → COSAS QUE PASAN SI LA PRIMERA PREGUNTA ES INCORRECTA
-            document.querySelector(`#star-${model.state.counters.listeningInLevelNumber++}`).src = 'imgs/estrella-wrong.png';
-            //cambiamos estilos al botón de fallado
-            let chosen1 = document.querySelector('.selected');
-            chosen1.classList.remove('answerContainer');
-            chosen1.classList.add('incorrectAnswer');
-        };
 
-        // CHEQUEANDO LA RESPUESTA A LA SEGUNDA PREGUNTA
-        if(model.listenings[model.state.counters.listeningsLevel][model.state.counters.listeningInLevelNumber][1][listeningState.selectedAnswer2]){
-            // → COSAS QUE PASAN SI LA SEGUNDA PREGUNTA ES CORRECTA
-            document.querySelector(`#star-${model.state.counters.listeningInLevelNumber++}`).src = 'imgs/estrella.png'; // cambiamos la imagen de la estrella a estrella acertada
-        }else{
-            // → COSAS QUE PASAN SI LA SEGUNDA PREGUNTA ES INCORRECTA
-            document.querySelector(`#star-${model.state.counters.listeningInLevelNumber++}`).src = 'imgs/estrella-wrong.png';
-        }
+/**
+ * Esta función se manda como parámetro al <<RENDER de LISTENING de C1 - BOTÓN ENVIAR PREGUNTAS>> para darle funcionalidad a la hora de escoger opción de respuesta
+ * 
+ */
+/**/export const listeningHandlerFuncC1_3 = function(){
+/**/    // Remove event listeners
+/**/    const removeListeners = () => {
+/**/        document.querySelector('#answersC1Container1').removeEventListener('click', listeningHandlerFuncC1);
+/**/        document.querySelector('#answersC1Container2').removeEventListener('click', listeningHandlerFuncC1_2);
+/**/        document.querySelector('#submitAnswers').removeEventListener('click', listeningHandlerFuncC1_3);
+/**/    };
+/**/
+/**/    // Helper function to update UI
+/**/    const updateQuestionUI = (isCorrect, questionNumber, selectedButton) => {
+/**/        const currentLevel = model.state.counters.listeningInLevelNumber + questionNumber;
+/**/        const starImage = isCorrect ? 'estrella.png' : 'estrella-wrong.png';
+/**/        const buttonClass = isCorrect ? 'correctAnswer' : 'incorrectAnswer';
+/**/
+/**/        document.querySelector(`#star-${currentLevel}`).src = `imgs/${starImage}`;
+/**/        selectedButton.classList.remove('answerContainer', 'selected');
+/**/        selectedButton.classList.add(buttonClass);
+/**/    };
+/**/
+/**/    if (listeningState.selectedAnswer1 && listeningState.selectedAnswer2) {
+/**/        removeListeners();
+/**/        const level = model.state.counters.listeningsLevel;
+/**/        const currentNumber = model.state.counters.listeningInLevelNumber;
+/**/
+/**/        // Check first question
+/**/        const isCorrect1 = model.listenings[level][currentNumber][0][listeningState.selectedAnswer1];
+/**/        updateQuestionUI(isCorrect1, model.state.counters.listeningInLevelNumber === 0 ? 0 : 1, document.querySelector('#answersC1Container1 .selected'));
+/**/        model.state.counters.rightListenings[model.state.counters.questionsLevel] += isCorrect1 ? 1 : 0;
+/**/        model.state.counters.counterListenings[model.state.counters.questionsLevel]++;
+/**/
+/**/        // Check second question
+/**/        const isCorrect2 = model.listenings[level][currentNumber][1][listeningState.selectedAnswer2];
+/**/        updateQuestionUI(isCorrect2, model.state.counters.listeningInLevelNumber === 0 ? 1 : 2, document.querySelector('#answersC1Container2 .selected'));
+/**/        model.state.counters.rightListenings[model.state.counters.questionsLevel] += isCorrect2 ? 1 : 0;
+/**/        model.state.counters.counterListenings[model.state.counters.questionsLevel]++;
+/**/
+/**/    } else {
+/**/        alert('Please select both answers before submitting');
+/**/    }
+/**/    setTimeout(() => {
+/**/        actualizarCounters();
+/**/        callBrain();
+/**/    }, 1000);
+/**/}
+/************************************** →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE C1 BOTÓN ENVIAR PREGUNTAS  ←←  ************************************/
 
-    // ESTE ELSE ES PARA QUE SALTE UN ALERT SI NO SE HAN SELECCIONADO AMBAS RESPUESTAS
-    } else {
-        alert('Please select both answers before submitting');
-    }
-}
-/************************************************************************************************************ */
+
+
+
 
 
 /**

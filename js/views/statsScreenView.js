@@ -45,7 +45,7 @@ class StatsScreenView{
     }
 
     _generateHTML(){
-        if(this._state.counters.questionsLevel === 0){
+        if(this._state.counters.questionsLevel === 0 || this._state.counters.questionsLevel === 5){
 
             return `
                 <section id="statsContainer">

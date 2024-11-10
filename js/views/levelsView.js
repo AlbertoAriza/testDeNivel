@@ -2,10 +2,8 @@
 class levelsView{
 
     _parentElement = document.querySelector('header');
-    _state;
 
     render(state){
-        this._state
         this._parentElement.innerHTML = '';
 
         for(let i = 0; i < state.counters.levelsPass.length; i++){
