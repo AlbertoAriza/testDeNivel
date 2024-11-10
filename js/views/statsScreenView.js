@@ -13,7 +13,7 @@ class StatsScreenView{
         const html = this._generateHTML();
         this._parentElement.innerHTML = html;
 
-        if(this._state.counters.questionsLevel === 0){
+        if(this._state.counters.questionsLevel === 0 || this._state.counters.questionsLevel === 5){
 
             this._progress1 = 100 * this._state.counters.rightQuestions[this._state.counters.questionsLevel] / this._state.counters.counterQuestions[this._state.counters.questionsLevel];
             const getProgressbar1 = document.querySelector(`.progressbar1`);

@@ -14,6 +14,7 @@ import finalScreenView from './views/finalScreenView.js';
  */
 const loadEndScreen = function(){
   finalScreenView.render(model.state);
+  finalScreenView.addHandler(eventFunction.endScreenHandlerFunction);
 }
 
 

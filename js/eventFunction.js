@@ -58,7 +58,6 @@ const listeningState = {
 /***********************************  →→  fin de questionHandlerFunc  ←←  ***************************************************/
 
 
-
 /**
  * Esta función de EVENTO se pasará a los <<RENDERS de LISTENINGS de A2 y B1>> para darle funcionalidad a la hora de escoger imagen de respuesta.
  */
@@ -106,7 +105,6 @@ const listeningState = {
 /**/  callBrain();
 /**/}
 /**************************************  →→  end of listeningHandlerFunc function  ←←  ********************************************/
-
 
 
 /**
@@ -166,10 +164,8 @@ const listeningState = {
 /*************************************** →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE B2  ←←  ***************************************/
 
 
-
 /**
  * Esta función se manda como parámetro al <<RENDER de LISTENING de C1 PRIMERA PREGUNTA>> para darle funcionalidad a la hora de escoger opción de respuesta
- * 
  */
 /**/export const listeningHandlerFuncC1 = function(e){
 /**/    const button = e.target.closest('.answerContainer');
@@ -182,7 +178,6 @@ const listeningState = {
 /**/    }
 /**/}
 /************************************** →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE C1 PRIMERA PREGUNTA  ←←  ****************************************/
-
 
 /**
  * Esta función se manda como parámetro al <<RENDER de LISTENING de C1 - SEGUNDA PREGUNTA>> para darle funcionalidad a la hora de escoger opción de respuesta
@@ -199,7 +194,6 @@ const listeningState = {
 /**/    }
 /**/}
 /**************************************  →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE C1 SEGUNDA PREGUNTA  ←←  ****************************************/
-
 
 /**
  * Esta función se manda como parámetro al <<RENDER de LISTENING de C1 - BOTÓN ENVIAR PREGUNTAS>> para darle funcionalidad a la hora de escoger opción de respuesta
@@ -252,10 +246,6 @@ const listeningState = {
 /************************************** →→  FIN FUNCIÓN DE EVENTO DE LISTENINGS DE C1 BOTÓN ENVIAR PREGUNTAS  ←←  ************************************/
 
 
-
-
-
-
 /**
  * Esta función se manda al renderizar el statsScreenView para el addEventListener.
  * Al ejecutarse en el eventListener ajusta todos los counters para el siguiente nivel y lanza pregunta nueva llamando a brainFunction()
@@ -265,6 +255,15 @@ const listeningState = {
 /**/    brainFunction();
 /**/}
 /******************************************* →→  FIN FUNCIÓN DE EVENTO DE STATS  ←←*******************************************/
+
+
+/**
+ * 
+ */
+/**/export const endScreenHandlerFunction = function(){
+/**/    window.close();
+/**/}
+/**/
 
 
 
